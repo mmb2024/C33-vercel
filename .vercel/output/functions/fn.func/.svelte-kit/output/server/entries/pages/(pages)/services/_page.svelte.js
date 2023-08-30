@@ -1,6 +1,7 @@
 import { c as create_ssr_component, b as each, v as validate_component, e as escape, d as add_attribute } from "../../../../chunks/index3.js";
 import { S as Seo } from "../../../../chunks/Seo.js";
-import { M as Modal, C as Content, T as Trigger, a as Contact_1 } from "../../../../chunks/Trigger.js";
+import { M as Modal, C as Content, T as Trigger } from "../../../../chunks/Trigger.js";
+import { C as Contact_1 } from "../../../../chunks/Contact.js";
 const _page_svelte_svelte_type_style_lang = "";
 const css = {
   code: ".grid.svelte-1hhf432{display:grid;grid-template-columns:repeat(3, 1fr);gap:2em;padding:2em 0;font-size:1.5em;font-weight:400}.contact.svelte-1hhf432{grid-column:block;margin-left:auto;margin-right:auto;padding:50px}h3.svelte-1hhf432{padding-top:0.8em;padding-bottom:0.1em;margin-bottom:0.5em;font-size:2em;font-weight:400;border-bottom:1px solid #ddd}h2.svelte-1hhf432{font-size:1.5em;padding-bottom:0.6em}",
