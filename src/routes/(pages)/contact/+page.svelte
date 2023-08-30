@@ -21,6 +21,7 @@
         <form  method="POST"
           use:enhance={() => {
             return async ({ result }) => {
+              console.log("+page.svelte L24: result= ", result);
               await applyAction(result);
             };
           }}
