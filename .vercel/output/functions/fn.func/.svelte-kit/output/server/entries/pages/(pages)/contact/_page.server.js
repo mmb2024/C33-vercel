@@ -3,9 +3,11 @@ import "dotenv/config";
 import { sql } from "@vercel/postgres";
 const prerender = false;
 async function storeDataVercel(pgData) {
+  console.log("./contact/page.server.js L10: pgData= ", pgData);
   try {
     const result2 = await sql`INSERT INTO users1 (name, lastname, email, message) 
         VALUES (${pgData.name}, ${pgData.lastname}, ${pgData.email}, ${pgData.message});`;
+    console.log("./contact/page.server.js L13: result2= ", result2);
     return {
       success: true,
       status: "Informacion enviada con exito"

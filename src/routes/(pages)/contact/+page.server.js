@@ -7,11 +7,11 @@ export const prerender = false;
 
 
 async function storeDataVercel(pgData)  {
-  //OK: console.log("./contact/page.server.js L10: pgData= ", pgData);
+  console.log("./contact/page.server.js L10: pgData= ", pgData);
   try {
     const result2 = await sql`INSERT INTO users1 (name, lastname, email, message) 
         VALUES (${pgData.name}, ${pgData.lastname}, ${pgData.email}, ${pgData.message});` 
-    //OK: console.log("./contact/page.server.js L13: result2= ", result2);
+    console.log("./contact/page.server.js L13: result2= ", result2);
     return { 
       success: true,
       status: "Informacion enviada con exito",
