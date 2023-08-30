@@ -1,0 +1,28 @@
+:root {
+  --primary-color: #ea8000;
+  --bg-color: white;
+  --color: #333;
+}
+
+[data-theme="dark"] {
+  --primary-color: #442d84;
+  --bg-color: #0c172a;
+  --color: #ddd;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, Helvetica, Poppins, Roboto, sans-serif,  apple color emoji,
+    segoe ui emoji, segoe ui symbol, noto color emoji;
+  background-color: var(--bg-color);
+  color: var(--color);
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+input, textarea {
+  background-color: transparent;
+}

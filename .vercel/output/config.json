@@ -1,0 +1,177 @@
+{
+	"version": 3,
+	"routes": [
+		{
+			"src": "/blog",
+			"dest": "/blog/"
+		},
+		{
+			"src": "/blog/",
+			"status": 308,
+			"headers": {
+				"Location": "/blog"
+			}
+		},
+		{
+			"src": "/blog/1",
+			"dest": "/blog/1/"
+		},
+		{
+			"src": "/blog/1/",
+			"status": 308,
+			"headers": {
+				"Location": "/blog/1"
+			}
+		},
+		{
+			"src": "/blog/2",
+			"dest": "/blog/2/"
+		},
+		{
+			"src": "/blog/2/",
+			"status": 308,
+			"headers": {
+				"Location": "/blog/2"
+			}
+		},
+		{
+			"src": "/blog/3",
+			"dest": "/blog/3/"
+		},
+		{
+			"src": "/blog/3/",
+			"status": 308,
+			"headers": {
+				"Location": "/blog/3"
+			}
+		},
+		{
+			"src": "/blog/4",
+			"dest": "/blog/4/"
+		},
+		{
+			"src": "/blog/4/",
+			"status": 308,
+			"headers": {
+				"Location": "/blog/4"
+			}
+		},
+		{
+			"src": "/blog/5",
+			"dest": "/blog/5/"
+		},
+		{
+			"src": "/blog/5/",
+			"status": 308,
+			"headers": {
+				"Location": "/blog/5"
+			}
+		},
+		{
+			"src": "/blog/6",
+			"dest": "/blog/6/"
+		},
+		{
+			"src": "/blog/6/",
+			"status": 308,
+			"headers": {
+				"Location": "/blog/6"
+			}
+		},
+		{
+			"src": "/blog/7",
+			"dest": "/blog/7/"
+		},
+		{
+			"src": "/blog/7/",
+			"status": 308,
+			"headers": {
+				"Location": "/blog/7"
+			}
+		},
+		{
+			"src": "/blog/8",
+			"dest": "/blog/8/"
+		},
+		{
+			"src": "/blog/8/",
+			"status": 308,
+			"headers": {
+				"Location": "/blog/8"
+			}
+		},
+		{
+			"src": "/blog/9",
+			"dest": "/blog/9/"
+		},
+		{
+			"src": "/blog/9/",
+			"status": 308,
+			"headers": {
+				"Location": "/blog/9"
+			}
+		},
+		{
+			"src": "/blog/10",
+			"dest": "/blog/10/"
+		},
+		{
+			"src": "/blog/10/",
+			"status": 308,
+			"headers": {
+				"Location": "/blog/10"
+			}
+		},
+		{
+			"src": "/_app/immutable/.+",
+			"headers": {
+				"cache-control": "public, immutable, max-age=31536000"
+			}
+		},
+		{
+			"handle": "filesystem"
+		},
+		{
+			"src": "/.*",
+			"dest": "/fn"
+		}
+	],
+	"overrides": {
+		"index.html": {
+			"path": ""
+		},
+		"blog.html": {
+			"path": "blog"
+		},
+		"blog/1.html": {
+			"path": "blog/1"
+		},
+		"blog/2.html": {
+			"path": "blog/2"
+		},
+		"blog/3.html": {
+			"path": "blog/3"
+		},
+		"blog/4.html": {
+			"path": "blog/4"
+		},
+		"blog/5.html": {
+			"path": "blog/5"
+		},
+		"blog/6.html": {
+			"path": "blog/6"
+		},
+		"blog/7.html": {
+			"path": "blog/7"
+		},
+		"blog/8.html": {
+			"path": "blog/8"
+		},
+		"blog/9.html": {
+			"path": "blog/9"
+		},
+		"blog/10.html": {
+			"path": "blog/10"
+		}
+	}
+}
