@@ -3,15 +3,14 @@ import "dotenv/config";
 import { sql } from "@vercel/postgres";
 const prerender = false;
 async function storeDataVercel(pgData) {
-  console.log("./contact/page.server.js L10: pgData= ", pgData);
   try {
     const result2 = await sql`INSERT INTO users1 (name, lastname, email, message) 
-        VALUES (${pgData.name}, ${pgData.lastname}, ${pgData.email}, ${pgData.message});`;
-    console.log("./contact/page.server.js L13: result2= ", result2);
-    return {
-      success: true,
-      status: "Informacion enviada con exito"
-    };
+                              VALUES (
+                                ${pgData.name},
+                                ${pgData.lastname},
+                                ${pgData.email},
+                                ${pgData.message});`;
+    return "true";
   } catch (error) {
     const errors = error;
     return { errors };
@@ -42,10 +41,21 @@ const actions = {
         message: `${message}`
       };
       const status1 = await storeDataVercel(pgData);
-      return {
-        success: true,
-        status: `Gracias ${name} ${lastname}. Tu Informacion fue enviada con exito`
-      };
+      if (status1) {
+        return {
+          success: true,
+          status: `Gracias ${name}. Tu Informacion fue enviada con exito`
+        };
+      } else {
+        return {
+          success: false,
+          status: `${name}. Error en el envio de tu Informacion, por favor intenta mas tarde.`,
+          name,
+          lastname,
+          email,
+          message
+        };
+      }
     } catch (error) {
       console.log({ error });
       const errors = error.inner.reduce((acc, err) => {
