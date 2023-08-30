@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # create-svelte
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
@@ -43,3 +44,6 @@ You can preview the production build with `npm run preview`.
 ms  : Use this package to easily convert various time formats to milliseconds.
 ws  : ws is a simple to use, blazing fast, and thoroughly tested WebSocket
       client and server implementation.
+=======
+# C33-vercel
+>>>>>>> 1167613a2452fea1e3278d5657f42e261511cb7f
