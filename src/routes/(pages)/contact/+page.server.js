@@ -22,7 +22,7 @@ async function loadUsers1() {
 			duration: duration
 		};
 	} catch (error) {
-		  console.log( "Error: Table users1 does not exist.");
+		  console.log( "Table users1 does not exist. error= ", error);
       throw error;
     }
 };
@@ -32,7 +32,7 @@ async function loadUsers1() {
 async function storeDataVercel(pgUsers1)  {
   await loadUsers1();
   const startTime = Date.now();
-  console.log(`+page.server sql() L10: startTime= `, startTime);
+  console.log(`+page.server sql() L35: startTime= `, startTime);
   try {
     const sqlQuery = await Promise.all([
           sql`INSERT INTO users1 (name, lastname, email, message) 
@@ -44,7 +44,7 @@ async function storeDataVercel(pgUsers1)  {
     ]);
 
     const duration = Date.now() - startTime;
-    console.log(`+page.server sql() L22: duration= `, duration);
+    console.log(`+page.server sql() L47: duration= `, duration);
     return ("true");
   } catch (error) {
           const errors = error;
