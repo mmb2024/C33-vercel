@@ -1,5 +1,5 @@
 <script>
-  // @ts-nocheck
+
 
   import { enhance, applyAction } from "$app/forms";
   import Button from "$lib/Button.svelte";

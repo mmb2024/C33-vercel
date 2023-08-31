@@ -1,4 +1,4 @@
-//@ts-nocheck
+
 import { object, string } from "yup";
 import 'dotenv/config';
 import { sql } from '@vercel/postgres';
@@ -67,16 +67,23 @@ export const actions = {
       }
 
     } catch(error) {
-        console.log({ error });
-        const errors = error.inner.reduce((acc, err) => {
-          return { ...acc, [err.path]: err.message };
-        }, {});
-        return {
-          errors,
-          name,
-          lastname,
-          email,
-          message,
-        };
-    }
+        if (error instanceof Error) {
+            // ✅ TypeScript knows err is Error
+            console.log( error )
+//            const errors = error.inner.reduce((acc, err) => {
+//              return { ...acc, [err.path]: err.message };
+//            }, {});
+              let errors = error;
+            return {
+              error,
+              errors,
+              name,
+              lastname,
+              email,
+              message,
+            };
+        } else {
+          console.log( error )
+        }
+      }
 }};

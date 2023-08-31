@@ -57,17 +57,20 @@ const actions = {
         };
       }
     } catch (error) {
-      console.log({ error });
-      const errors = error.inner.reduce((acc, err) => {
-        return { ...acc, [err.path]: err.message };
-      }, {});
-      return {
-        errors,
-        name,
-        lastname,
-        email,
-        message
-      };
+      if (error instanceof Error) {
+        console.log(error);
+        let errors = error;
+        return {
+          error,
+          errors,
+          name,
+          lastname,
+          email,
+          message
+        };
+      } else {
+        console.log(error);
+      }
     }
   }
 };
