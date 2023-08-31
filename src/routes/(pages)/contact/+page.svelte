@@ -1,4 +1,5 @@
 <script>
+  // @ts-nocheck
   import { enhance, applyAction } from "$app/forms";
   import Button from "$lib/Button.svelte";
   import Seo from "$lib/Seo.svelte";
@@ -82,8 +83,8 @@
                 class="form-control  form-control-lg"
                 id="message"
                 name="message"
+                rows="4"
                 placeholder="Por favor ingrese su requerimiento aqui...."
-                rows="5"
                 value={form?.message || ""}
                 class:error={form?.errors?.message}
               />

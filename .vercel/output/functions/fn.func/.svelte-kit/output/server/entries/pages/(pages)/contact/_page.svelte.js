@@ -38,7 +38,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
             <div class="col-md-8"><textarea class="${[
     "form-control form-control-lg svelte-1fi4br",
     form?.errors?.message ? "error" : ""
-  ].join(" ").trim()}" id="message" name="message" placeholder="Por favor ingrese su requerimiento aqui...." rows="5">${escape(form?.message || "", false)}</textarea>
+  ].join(" ").trim()}" id="message" name="message" rows="4" placeholder="Por favor ingrese su requerimiento aqui....">${escape(form?.message || "", false)}</textarea>
               ${form?.errors?.message ? `<p class="red svelte-1fi4br">${escape(form?.errors?.message)}</p>` : ``}</div></div>
 
           <div class="col-8 form-group text-center svelte-1fi4br"><div class="btn btn-vue btn-lg col-4">${validate_component(Button, "Button").$$render($$result, { type: "submit" }, {}, {

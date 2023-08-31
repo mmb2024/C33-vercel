@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 import { createPool } from '@vercel/postgres';
 import { sql } from '@vercel/postgres';
@@ -15,8 +16,8 @@ async function loadUsers1() {
 
   try {
 		const { rows: users } = await db.query('SELECT * FROM users1');
-    console.log(`+page.server loadUsers1() L18: users= `, users);
 		const duration = Date.now() - startTime;
+    console.log(`+page.server loadUsers1() L20: users= `, users);
 		return {
 			users: users,
 			duration: duration
@@ -30,7 +31,6 @@ async function loadUsers1() {
 
 
 async function storeDataVercel(pgUsers1)  {
-  await loadUsers1();
   const startTime = Date.now();
   console.log(`+page.server sql() L35: startTime= `, startTime);
   try {
@@ -44,7 +44,9 @@ async function storeDataVercel(pgUsers1)  {
     ]);
 
     const duration = Date.now() - startTime;
-    console.log(`+page.server sql() L47: duration= `, duration);
+//    console.log(`+page.server sql() L47: duration= `, duration);
+    await loadUsers1();
+
     return ("true");
   } catch (error) {
           const errors = error;
@@ -101,13 +103,18 @@ export const actions = {
     } catch(error) {
         if (error instanceof Error) {
             // ✅ TypeScript knows err is Error
-            console.log( error )
+            console.log("+page.server.js L104: error= ", error )
 //            const errors = error.inner.reduce((acc, err) => {
-//              return { ...acc, [err.path]: err.message };
-//            }, {});
-            let errors = error;
+  //            return { ...acc, [err.path]: err.message };
+    //        }, {});
+            const errors = {
+              name: error.name,
+              lastname: "Error " + lastname,
+              email:  "Error " + email,
+              message: error.message
+            };
+            console.log("+page.server.js L114: error= ", error );
             return {
-              error,
               errors,
               name,
               lastname,
@@ -118,4 +125,27 @@ export const actions = {
           console.log( error )
         }
       }
-}};
+  },
+
+
+  //  NAMED ACTIONS
+  //  In addition to the default action, you can define named actions to handle
+  //  different form submissions on the same page
+/*
+  
+  addUser: async ({ request }) => {
+    // Add user action implementation
+  },
+  getUser: async ({ request }) => {
+    // Get user action implementation
+  },
+    In the page.svelte file include an action attribute with the name of 
+    the desired action as the value:
+      <form action="addUser" method="POST">
+        <!-- Form fields go here -->
+        <input name="email" />
+        <button type="submit">Add User</button>
+      </form>
+*/
+
+};
