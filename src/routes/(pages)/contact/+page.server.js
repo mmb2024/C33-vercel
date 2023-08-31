@@ -1,18 +1,21 @@
 
+import { sql } from '@vercel/postgres';
 import { object, string } from "yup";
 import 'dotenv/config';
-import { sql } from '@vercel/postgres';
 
 export const prerender = false;
 
-async function storeDataVercel(pgData)  {
+async function storeDataVercel(pgUsers1)  {
+  const startTime = Date.now();
   try {
-    const result2 = await sql`INSERT INTO users1 (name, lastname, email, message) 
+    const sqlQuery = await sql`INSERT INTO users1 (name, lastname, email, message) 
                               VALUES (
-                                ${pgData.name},
-                                ${pgData.lastname},
-                                ${pgData.email},
-                                ${pgData.message});`; 
+                                ${pgUsers1.name},
+                                ${pgUsers1.lastname},
+                                ${pgUsers1.email},
+                                ${pgUsers1.message});`;
+    const duration = Date.now() - startTime;
+    console.log(`+page.server sql() L18: duration= `, duration);
     return ("true");
   } catch (error) {
           const errors = error;
@@ -24,32 +27,32 @@ async function storeDataVercel(pgData)  {
 export const actions = {
   default: async ( {  request } ) => {
     const formData = await request.formData();
-    const name = formData.get("name");
-    const lastname = formData.get("lastname");
-    const email = formData.get("email");
-    const message = formData.get("message");
+    const name      = formData.get("name");
+    const lastname  = formData.get("lastname");
+    const email     = formData.get("email");
+    const message   = formData.get("message");
 
     const contactFormSchema = object({
-      name: string().min(2, "too short").required("Por favor ingresar un nombre valido"),
+      name:     string().min(2, "too short").required("Por favor ingresar un nombre valido"),
       lastname: string().min(2, "too short").required("Por favor ingresar un apellido valido"),
-      email: string().required("Email es requerido.").email(),
-      message: string().required(),
+      email:    string().required("Email es requerido.").email(),
+      message:  string().required(),
     });
 
     try {
-      const result = await contactFormSchema.validate(
+      const validationResult = await contactFormSchema.validate(
             { name, lastname, email, message },
             { abortEarly: false }
         );
 
-      const pgData = {
-        name: `${name}`,
+      const pgUsers1 = {
+        name:     `${name}`,
         lastname: `${lastname}`,
-        email:  `${email}`,
-        message: `${message}`
+        email:    `${email}`,
+        message:  `${message}`
       };
 
-      const  status1 = await storeDataVercel(pgData);
+      const  status1 = await storeDataVercel(pgUsers1);
       if (status1) {
           return { 
             success: true,
@@ -73,7 +76,7 @@ export const actions = {
 //            const errors = error.inner.reduce((acc, err) => {
 //              return { ...acc, [err.path]: err.message };
 //            }, {});
-              let errors = error;
+            let errors = error;
             return {
               error,
               errors,

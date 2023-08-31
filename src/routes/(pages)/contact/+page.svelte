@@ -1,14 +1,10 @@
 <script>
-
-
   import { enhance, applyAction } from "$app/forms";
   import Button from "$lib/Button.svelte";
   import Seo from "$lib/Seo.svelte";
 
   export let form;
-
 </script>
-
 
 <div class="container">
 

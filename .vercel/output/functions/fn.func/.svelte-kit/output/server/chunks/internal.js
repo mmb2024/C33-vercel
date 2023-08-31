@@ -136,7 +136,7 @@ const options = {
   root: Root,
   service_worker: false,
   templates: {
-    app: ({ head, body, assets: assets2, nonce, env }) => '<!DOCTYPE html>\n<html lang="en" data-theme="">\n\n<head>\n	<meta charset="utf-8" />\n	<link rel="icon" href="' + assets2 + '/company-logo.png" />\n	<meta name="viewport" content="width=device-width" />\n\n	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">\n	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">\n\n	' + head + '\n</head>\n\n<div data-sveltekit-preload-data="hover">\n	' + body + "\n</div>\n\n</html>",
+    app: ({ head, body, assets: assets2, nonce, env }) => '<!DOCTYPE html>\n<html lang="en" data-theme="">\n\n<head>\n	<meta charset="utf-8" />\n	<link rel="icon" href="' + assets2 + '/company-logo.png" />\n	<meta name="viewport" content="width=device-width" />\n\n	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">\n	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">\n\n	' + head + '\n</head>\n\n<body data-sveltekit-preload-data="hover">\n	<div>' + body + "</div>\n</body>\n\n</html>",
     error: ({ status, message }) => '<!DOCTYPE html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<title>' + message + `</title>
 
 		<style>
@@ -198,7 +198,7 @@ const options = {
 		<div class="error">
 			<span class="status">` + status + '</span>\n			<div class="message">\n				<h1>' + message + "</h1>\n			</div>\n		</div>\n	</body>\n</html>\n"
   },
-  version_hash: "1rj844e"
+  version_hash: "13dws3i"
 };
 function get_hooks() {
   return import("./hooks.server.js");
