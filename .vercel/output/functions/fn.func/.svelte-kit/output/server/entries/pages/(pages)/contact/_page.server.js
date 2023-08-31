@@ -5,12 +5,14 @@ const prerender = false;
 async function storeDataVercel(pgUsers1) {
   const startTime = Date.now();
   try {
-    const sqlQuery = await sql`INSERT INTO users1 (name, lastname, email, message) 
-                              VALUES (
-                                ${pgUsers1.name},
-                                ${pgUsers1.lastname},
-                                ${pgUsers1.email},
-                                ${pgUsers1.message});`;
+    const sqlQuery = await Promise.all([
+      sql`INSERT INTO users1 (name, lastname, email, message) 
+                     VALUES (
+                              ${pgUsers1.name},
+                              ${pgUsers1.lastname},
+                              ${pgUsers1.email},
+                              ${pgUsers1.message});`
+    ]);
     const duration = Date.now() - startTime;
     console.log(`+page.server sql() L18: duration= `, duration);
     return "true";
