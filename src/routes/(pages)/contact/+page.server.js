@@ -1,23 +1,50 @@
 
+import { createPool } from '@vercel/postgres';
 import { sql } from '@vercel/postgres';
 import { object, string } from "yup";
 import 'dotenv/config';
 
 export const prerender = false;
 
-async function storeDataVercel(pgUsers1)  {
+async function loadUsers1() {
   const startTime = Date.now();
+  console.log(`+page.server loadUsers1() L11: startTime= `, startTime);
+	const db = createPool({
+    connectionString: process.env.POSTGRES_URL
+  });
+
+  try {
+		const { rows: users } = await db.query('SELECT * FROM users1');
+    console.log(`+page.server loadUsers1() L18: users= `, users);
+		const duration = Date.now() - startTime;
+		return {
+			users: users,
+			duration: duration
+		};
+	} catch (error) {
+		  console.log( "Error: Table users1 does not exist.");
+      throw error;
+    }
+};
+
+
+
+async function storeDataVercel(pgUsers1)  {
+  await loadUsers1();
+  const startTime = Date.now();
+  console.log(`+page.server sql() L10: startTime= `, startTime);
   try {
     const sqlQuery = await Promise.all([
           sql`INSERT INTO users1 (name, lastname, email, message) 
-                     VALUES (
-                              ${pgUsers1.name},
-                              ${pgUsers1.lastname},
-                              ${pgUsers1.email},
-                              ${pgUsers1.message});`,]);
+              VALUES (
+                      ${pgUsers1.name},
+                      ${pgUsers1.lastname},
+                      ${pgUsers1.email},
+                      ${pgUsers1.message});`,
+    ]);
 
     const duration = Date.now() - startTime;
-    console.log(`+page.server sql() L18: duration= `, duration);
+    console.log(`+page.server sql() L22: duration= `, duration);
     return ("true");
   } catch (error) {
           const errors = error;
