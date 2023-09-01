@@ -10,8 +10,8 @@
 <C33body />
 
 <Seo
-  title="Casa en Venta | Cumbaya"
-  description="Diseño Minimalista con mucha iluminacion Natural"
+  title="Vercel | Cumbaya"
+  description="Diseño"
   type="WebPage"
 />
 

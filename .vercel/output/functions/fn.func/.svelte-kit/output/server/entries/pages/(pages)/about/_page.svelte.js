@@ -1,4 +1,4 @@
-import { c as create_ssr_component, e as escape, b as each, v as validate_component } from "../../../../chunks/index3.js";
+import { c as create_ssr_component, e as escape, d as each, v as validate_component } from "../../../../chunks/index2.js";
 import ms from "ms";
 const Table_svelte_svelte_type_style_lang = "";
 const css$1 = {

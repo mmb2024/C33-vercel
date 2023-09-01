@@ -26,7 +26,6 @@
   let currentTheme = "";
 
   onMount(() => {
-    // currentTheme = document.documentElement.dataset.theme;
     const userPrefersDarkMode = window.matchMedia(
       "(prefers-color-scheme: dark)"
     ).matches;

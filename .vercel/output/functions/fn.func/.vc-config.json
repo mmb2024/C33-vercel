@@ -1,6 +1,6 @@
 {
 	"runtime": "nodejs18.x",
-	"handler": "..\\..\\..\\TutCurrent\\C33-vercel\\.svelte-kit\\vercel-tmp\\index.js",
+	"handler": "..\\..\\..\\TutCurrent\\cumbaya-vercel\\.svelte-kit\\vercel-tmp\\index.js",
 	"launcherType": "Nodejs",
 	"experimentalResponseStreaming": true
 }

@@ -1,4 +1,4 @@
-import { c as create_ssr_component, e as escape, a as subscribe, b as each, d as add_attribute, v as validate_component } from "../../chunks/index3.js";
+import { c as create_ssr_component, e as escape, b as subscribe, d as each, f as add_attribute, v as validate_component } from "../../chunks/index2.js";
 import { p as page } from "../../chunks/stores.js";
 const style = "";
 const app = "";
@@ -10,7 +10,7 @@ const css$3 = {
 const Footer = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   const year = (/* @__PURE__ */ new Date()).getFullYear();
   $$result.css.add(css$3);
-  return `<footer class="svelte-1vyimli"><div class="container svelte-1vyimli">Copyright © MyHomes ${escape(year)}</div>
+  return `<footer class="svelte-1vyimli"><div class="container svelte-1vyimli">Copyright ©mm  ${escape(year)}</div>
 </footer>`;
 });
 const moon_svelte_svelte_type_style_lang = "";

@@ -11,35 +11,9 @@
       <h3>Acabados de Lujo</h3>
     </div>
     <div class="features">
-        <p> - Arquitectura Moderna/Minimalista</p>       
-        <p> - 500 m2 de Construccion. 840 m2 de Terreno</p>
-        <p> - 4 Dormitorios. 3 Baños Completos</p>
-        <p> - Estar/Estudio en Segunda Planta</p>
-        <p> - Master con Jacuzzi y Salita Estar</p>
-        <p> - Sala Doble Altura</p>
-        <p> - Porcelanatos Italianos</p>
-        <p> - Griferia-Sanitarios Franz Viegener</p>
-        <p> - BBQ, Area de Servicio. Bodega</p>
-        <p> - Jardines Amplios</p>
-        <p> - Garage 4 Autos</p>
-        <p> - Areas Amplias - Grandes Ventanales</p>
-        <p> - Mucha Iluminacion Natural</p>
-        <p> - Urbanizacion Cerrada, Guardiania 24 Horas. </p>
-        <p> - Canchas de Tenis, Futbol, Basket, Voley</p>
+        <p> - C33 Body.svelte</p>       
     </div>
 
-    <div class="photo-main">
-      <Modal big={true} button={false}>
-        <Content>
-          <img src="C33fromPark.jpg" 
-                alt="C33fromPark.jpg" width="1200" height="800" />
-        </Content>
-        <Trigger>
-          <img src="C33fromPark.jpg" 
-                alt="C33fromPark.jpg" width="600" height="400" />
-        </Trigger>
-      </Modal>
-    </div>
   </div>
   <div class="contactus">
     <Contact />
@@ -75,11 +49,6 @@
     background-color: rgba(245, 245, 245, 0.842);
     margin-top: 0px;
     padding: 30px 15px 5px 20px;
-  }
-  .photo-main {
-    grid-row: 2;
-    grid-column: 2;
-    margin: 40px 10px 0px 0px;
   }
   .contactus {
     width: 100%;

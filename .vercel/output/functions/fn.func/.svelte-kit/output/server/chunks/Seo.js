@@ -1,4 +1,4 @@
-import { c as create_ssr_component, a as subscribe, e as escape, d as add_attribute } from "./index3.js";
+import { c as create_ssr_component, b as subscribe, e as escape, f as add_attribute } from "./index2.js";
 import { p as page } from "./stores.js";
 const Seo = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let url;

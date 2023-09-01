@@ -1,8 +1,8 @@
 <div class="hero">
   <div class="container">
-    <h2>Casa en Cumbaya, Quito - Ecuador</h2>
+    <h2>Cumbaya, Quito - Ecuador</h2>
     <p>
-      En el mejor sector de Cumbaya, junto a la Universidad San Francisco, Supermaxi, Fybeca, Paseo San Francisco, Kywi.
+      En el mejor sector de Cumbaya.
     </p>
   </div>
 </div>

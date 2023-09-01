@@ -1,29 +1,10 @@
-import { sql, createPool } from "@vercel/postgres";
+import { sql } from "@vercel/postgres";
 import { object, string } from "yup";
 import "dotenv/config";
 const prerender = false;
-async function loadUsers1() {
-  const startTime = Date.now();
-  console.log(`+page.server loadUsers1() L11: startTime= `, startTime);
-  const db = createPool({
-    connectionString: process.env.POSTGRES_URL
-  });
-  try {
-    const { rows: users } = await db.query("SELECT * FROM users1");
-    const duration = Date.now() - startTime;
-    console.log(`+page.server loadUsers1() L20: users= `, users);
-    return {
-      users,
-      duration
-    };
-  } catch (error) {
-    console.log("Table users1 does not exist. error= ", error);
-    throw error;
-  }
-}
 async function storeDataVercel(pgUsers1) {
   const startTime = Date.now();
-  console.log(`+page.server sql() L35: startTime= `, startTime);
+  console.log(`+page.server sql() L12: startTime= `, startTime);
   try {
     const sqlQuery = await Promise.all([
       sql`INSERT INTO users1 (name, lastname, email, message) 
@@ -34,7 +15,7 @@ async function storeDataVercel(pgUsers1) {
                       ${pgUsers1.message});`
     ]);
     const duration = Date.now() - startTime;
-    await loadUsers1();
+    console.log(`+page.server sql() L24: sqlQuery= `, sqlQuery);
     return "true";
   } catch (error) {
     const errors = error;
@@ -103,25 +84,6 @@ const actions = {
       }
     }
   }
-  //  NAMED ACTIONS
-  //  In addition to the default action, you can define named actions to handle
-  //  different form submissions on the same page
-  /*
-    
-    addUser: async ({ request }) => {
-      // Add user action implementation
-    },
-    getUser: async ({ request }) => {
-      // Get user action implementation
-    },
-      In the page.svelte file include an action attribute with the name of 
-      the desired action as the value:
-        <form action="addUser" method="POST">
-          <!-- Form fields go here -->
-          <input name="email" />
-          <button type="submit">Add User</button>
-        </form>
-  */
 };
 export {
   actions,

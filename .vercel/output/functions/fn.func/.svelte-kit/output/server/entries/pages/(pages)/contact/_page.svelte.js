@@ -1,7 +1,21 @@
-import { c as create_ssr_component, e as escape, d as add_attribute, v as validate_component } from "../../../../chunks/index3.js";
+import { c as create_ssr_component, g as compute_rest_props, h as spread, i as escape_object, e as escape, f as add_attribute, v as validate_component } from "../../../../chunks/index2.js";
 import "devalue";
-import { B as Button } from "../../../../chunks/Button.js";
-import { S as Seo } from "../../../../chunks/Seo.js";
+/* empty css                                                       */import { S as Seo } from "../../../../chunks/Seo.js";
+const css$1 = {
+  code: "button.svelte-1lmobxj{border:none;border-radius:0.25em;background-color:var(--primary-color);color:white;font-size:1em;cursor:pointer}.medium.svelte-1lmobxj{padding:0.5em 1.5em}.small.svelte-1lmobxj{padding:0.25em 0.5em}",
+  map: null
+};
+const Button = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let $$restProps = compute_rest_props($$props, ["size"]);
+  let { size = "medium" } = $$props;
+  if ($$props.size === void 0 && $$bindings.size && size !== void 0)
+    $$bindings.size(size);
+  $$result.css.add(css$1);
+  return `<button${spread([escape_object($$restProps)], {
+    classes: (size === "small" ? "small" : "") + " " + (size === "medium" ? "medium" : "") + " svelte-1lmobxj"
+  })}>${slots.default ? slots.default({}) : ``}
+</button>`;
+});
 const _page_svelte_svelte_type_style_lang = "";
 const css = {
   code: ".container.svelte-1fi4br{width:100%;padding:2em 0}h2.svelte-1fi4br{font-weight:500;font-size:1.5em}input.svelte-1fi4br,textarea.svelte-1fi4br{width:100%;padding:0.75em 1em;border-radius:0.25em;border:1px solid #999}.form-group.svelte-1fi4br{margin-bottom:1.5em}label.svelte-1fi4br{display:block;padding-bottom:0.5em}.success.svelte-1fi4br{color:rgb(39, 21, 237)}.error.svelte-1fi4br{border:1px solid red}.red.svelte-1fi4br{color:red}",
@@ -51,8 +65,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 ${validate_component(Seo, "Seo").$$render(
     $$result,
     {
-      title: "Casa en Venta | Cumbaya",
-      description: "Diseño Minimalista con mucha iluminacion Natural",
+      title: "Vercel | Cumbaya",
+      description: "Diseño",
       type: "WebPage"
     },
     {},

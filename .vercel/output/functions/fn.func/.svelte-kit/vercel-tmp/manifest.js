@@ -7,10 +7,10 @@ function __memo(fn) {
 return {
 	appDir: "_app",
 	appPath: "_app",
-	assets: new Set(["C33facFront1.JPG","C33facFront1.png","C33facPost.JPG","C33fromPark - Copy.jpg","C33fromPark.jpg","C33fromPark1.jpg","C33living1.JPG","C33living2.JPG","C33PAcorridor.JPG","C33stairs1.JPG","C33stairs2.JPG","C33studios1.JPG","C33studios2.JPG","company-logo.png"]),
-	mimeTypes: {".JPG":"image/jpeg",".png":"image/png",".jpg":"image/jpeg"},
+	assets: new Set(["company-logo.png"]),
+	mimeTypes: {".png":"image/png"},
 	_: {
-		client: {"start":"_app/immutable/entry/start.3efabae0.js","app":"_app/immutable/entry/app.0229e7a6.js","imports":["_app/immutable/entry/start.3efabae0.js","_app/immutable/chunks/index.44e5ef1f.js","_app/immutable/chunks/singletons.27c9114e.js","_app/immutable/chunks/parse.bee59afc.js","_app/immutable/entry/app.0229e7a6.js","_app/immutable/chunks/index.44e5ef1f.js"],"stylesheets":[],"fonts":[]},
+		client: {"start":"_app/immutable/entry/start.733a85ed.js","app":"_app/immutable/entry/app.05038afd.js","imports":["_app/immutable/entry/start.733a85ed.js","_app/immutable/chunks/index.07371483.js","_app/immutable/chunks/singletons.ee3933b4.js","_app/immutable/chunks/parse.bee59afc.js","_app/immutable/entry/app.05038afd.js","_app/immutable/chunks/index.07371483.js"],"stylesheets":[],"fonts":[]},
 		nodes: [
 			__memo(() => import('../output/server/nodes/0.js')),
 			__memo(() => import('../output/server/nodes/1.js')),

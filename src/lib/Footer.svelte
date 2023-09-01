@@ -3,7 +3,7 @@
 </script>
 
 <footer>
-  <div class="container">Copyright © MyHomes {year}</div>
+  <div class="container">Copyright ©mm  {year}</div>
 </footer>
 
 <style>
