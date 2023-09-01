@@ -11,9 +11,11 @@ export async function load() {
   const db = createPool({
     connectionString: process.env.POSTGRES_URL
   });
+  console.log(`+page.server load() L14: db= `, db);
   try {
-		const { rows: users } = await db.query('SELECT * FROM users');
+		const { rows: users } = await db.query('SELECT * FROM users1');
 		const duration = Date.now() - startTime;
+    console.log(`+page.server load() L18: users= `, users);
 		return {
 			users: users,
 			duration: duration
