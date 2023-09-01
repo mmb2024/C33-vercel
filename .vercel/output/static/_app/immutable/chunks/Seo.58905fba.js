@@ -1,4 +1,4 @@
-import{S as u,i as f,s as _,k as y,a0 as g,e as p,a1 as S,l as w,a2 as H,h as c,n as m,C as d,D as h,H as b}from"./index.44e5ef1f.js";import{p as j}from"./stores.3fbbb503.js";function C(n){let i,e,o,s=`<script type="application/ld+json">
+import{S as u,i as f,s as _,k as y,a0 as g,e as p,a1 as S,l as w,a2 as H,h as c,n as m,C as d,D as h,H as b}from"./index.44e5ef1f.js";import{p as j}from"./stores.fa4040e7.js";function C(n){let i,e,o,s=`<script type="application/ld+json">
 {
     "@context": "http://schema.org",
     "@type": "${n[2]}",

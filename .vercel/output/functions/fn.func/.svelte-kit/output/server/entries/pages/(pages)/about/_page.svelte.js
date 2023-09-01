@@ -53,7 +53,6 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     {},
     {}
   )}
-  <div class="w-full max-w-lg mt-6 font-light text-center text-gray-600 dark:text-gray-300"></div>
 </main>`;
 });
 export {
