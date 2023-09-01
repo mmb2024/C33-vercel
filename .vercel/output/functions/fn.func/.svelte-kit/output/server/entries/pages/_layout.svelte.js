@@ -1,6 +1,7 @@
 import { c as create_ssr_component, e as escape, a as subscribe, b as each, d as add_attribute, v as validate_component } from "../../chunks/index3.js";
 import { p as page } from "../../chunks/stores.js";
 const style = "";
+const app = "";
 const Footer_svelte_svelte_type_style_lang = "";
 const css$3 = {
   code: "footer.svelte-1vyimli{margin-top:auto;padding:3em 0;background-color:#0d2247;color:white}.container.svelte-1vyimli{text-align:center;line-height:0.6;font-size:1.2em;font-weight:400}",
