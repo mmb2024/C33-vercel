@@ -7,11 +7,10 @@ import "dotenv/config";
 export async function load() {
   const startTime = Date.now();
   console.log(`+page.server load() L9: startTime= `, startTime);
-	const db = createPool({
+
+  const db = createPool({
     connectionString: process.env.POSTGRES_URL
   });
-  console.log(`+page.server load() L13: db= `, db);
-
   try {
 		const { rows: users } = await db.query('SELECT * FROM users');
 		const duration = Date.now() - startTime;
@@ -26,4 +25,5 @@ export async function load() {
       throw error;
     }
 	}
+
 }
