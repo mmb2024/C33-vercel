@@ -8,6 +8,7 @@ async function load() {
   });
   console.log(`+page.server load() L13: db= `, db);
   try {
+    const { rows: users } = await db.query("SELECT * FROM users");
     const duration = Date.now() - startTime;
     return {
       users,
