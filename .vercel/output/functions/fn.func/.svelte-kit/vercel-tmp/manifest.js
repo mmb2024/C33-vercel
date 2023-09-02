@@ -10,7 +10,7 @@ return {
 	assets: new Set(["company-logo.png"]),
 	mimeTypes: {".png":"image/png"},
 	_: {
-		client: {"start":"_app/immutable/entry/start.733a85ed.js","app":"_app/immutable/entry/app.05038afd.js","imports":["_app/immutable/entry/start.733a85ed.js","_app/immutable/chunks/index.07371483.js","_app/immutable/chunks/singletons.ee3933b4.js","_app/immutable/chunks/parse.bee59afc.js","_app/immutable/entry/app.05038afd.js","_app/immutable/chunks/index.07371483.js"],"stylesheets":[],"fonts":[]},
+		client: {"start":"_app/immutable/entry/start.ae84d945.js","app":"_app/immutable/entry/app.6751b1b5.js","imports":["_app/immutable/entry/start.ae84d945.js","_app/immutable/chunks/index.07371483.js","_app/immutable/chunks/singletons.d2d8baf6.js","_app/immutable/chunks/parse.bee59afc.js","_app/immutable/entry/app.6751b1b5.js","_app/immutable/chunks/index.07371483.js"],"stylesheets":[],"fonts":[]},
 		nodes: [
 			__memo(() => import('../output/server/nodes/0.js')),
 			__memo(() => import('../output/server/nodes/1.js')),

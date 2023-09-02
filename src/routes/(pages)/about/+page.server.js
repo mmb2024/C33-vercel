@@ -9,7 +9,7 @@ export async function load() {
   console.log(`+page.server load() L9: startTime= `, startTime);
 
   const db = createPool({
-    connectionString: process.env.POSTGRES_URL
+    connectionString: "postgres://default:PLMxCqhe4r9V@ep-blue-grass-61581514-pooler.us-east-1.postgres.vercel-storage.com/verceldb?pgbouncer=true&connect_timeout=15"
   });
   console.log(`+page.server load() L14: db= `, db);
   try {
