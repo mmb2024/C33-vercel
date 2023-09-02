@@ -15,7 +15,7 @@ export async function load() {
   try {
 		const { rows: users } = await db.query('SELECT * FROM users1');
 		const duration = Date.now() - startTime;
-    console.log(`+page.server load() L18: users= `, users);
+    //console.log(`+page.server load() L18: users= `, users);
 		return {
 			users: users,
 			duration: duration
