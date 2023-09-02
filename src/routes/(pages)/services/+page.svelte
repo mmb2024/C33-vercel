@@ -1,7 +1,8 @@
 <script>
+  // @ts-nocheck
   import Seo from "$lib/Seo.svelte";
-  import { Modal, Content, Trigger } from "sv-popup";
   import Contact from "$lib/Contact.svelte";
+  import { Modal, Content, Trigger } from "sv-popup"
 
   const posts = [
     {

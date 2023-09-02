@@ -1,3 +1,4 @@
+/*
 export const prerender = true;
 
 export const load = async ({ fetch }) => {
@@ -11,3 +12,4 @@ export const load = async ({ fetch }) => {
     posts: getPosts(),
   };
 };
+*/
